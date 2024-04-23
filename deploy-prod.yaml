@@ -15,9 +15,9 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: app-prod
+  name: abc-prod
 spec:
   template:
     spec:
       containers:
-      - image: app
+      - image: abc

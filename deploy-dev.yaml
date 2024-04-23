@@ -15,12 +15,12 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: app-dev
+  name: abc-dev
 spec:
   template:
     spec:
       containers:
-      - image: app
+      - image: abc
         resources:
           limits:
             cpu: 1000m

@@ -17,7 +17,7 @@ steps:
   entrypoint: 'pack'
   args: ['build',
          '--builder=gcr.io/buildpacks/builder',
-         '--publish', '${_REGION}-docker.pkg.dev/${PROJECT_ID}/containers-repo/app:$BUILD_ID']
+         '--publish', '${_REGION}-docker.pkg.dev/${PROJECT_ID}/containers-repo/abc:$BUILD_ID']
   id: Build and package python app
 - name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
   args: 
@@ -25,6 +25,6 @@ steps:
         "deploy", "releases", "create", "release-$_RELEASE_TIMESTAMP",
         "--delivery-pipeline", "cloud-run-pipeline",
         "--region", "${_REGION}",
-        "--images", "app=${_REGION}-docker.pkg.dev/${PROJECT_ID}/containers-repo/app:$BUILD_ID"
+        "--images", "app=${_REGION}-docker.pkg.dev/${PROJECT_ID}/containers-repo/abc:$BUILD_ID"
       ]
   entrypoint: gcloud
